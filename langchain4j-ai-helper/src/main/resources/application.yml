@@ -1,0 +1,70 @@
+spring:
+  config:
+    import: optional:classpath:application-local.yml
+  application:
+    name: ai-code-helper
+  datasource:
+    url: jdbc:mysql://localhost:3306/ai-helper?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    # 数据库用户名
+    username: ${MYSQL_USERNAME}
+    # 数据库密码
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #sql:
+    #init:
+      #mode: always
+server:
+  # 服务器端口
+  port: 8080
+  #servlet:
+    #context-path: /api
+langchain4j:
+#  open-ai:
+#    chat-model:
+#      base-url: https://api.deepseek.com/v1
+#      api-key: ${OPENAI_API_KEY}
+#      model-name: deepseek-chat
+#      temperature: 0.7
+#      timeout: 60s
+#    streaming-chat-model:
+#      base-url: https://api.deepseek.com/v1
+#      api-key: ${OPENAI_API_KEY}
+#      model-name: deepseek-chat
+#      temperature: 0.7
+#      timeout: 60s
+  community:
+    dashscope:
+      chat-model:
+        model-name: qwen-max
+        # API Key 1
+        api-key: ${DASHSCOPE_API_KEY}
+      streaming-chat-model:
+        model-name: qwen-max
+        # API Key 1
+        api-key: ${DASHSCOPE_API_KEY}
+      embedding-model:
+        model-name: text-embedding-v4
+        # API Key 1
+        api-key: ${DASHSCOPE_API_KEY}
+bigmodel: # 通过mcp通信协议传递格式化调用接口和参数
+  # API Key 2
+  api-key: ${BIGMODEL_API_KEY}
+research:
+  report:
+    max-tool-calls: 2
+    step-timeout-seconds: 20
+    generation-timeout-seconds: 40
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.example.aicodehelper.mapper: debug
+ai:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    secret-key: ${JWT_SECRET}
+    # 设置jwt过期时间
+    ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    token-name: token
