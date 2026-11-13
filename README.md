@@ -1,6 +1,6 @@
-# AI Code Helper
+# AI Helper
 
-一个支持**流式对话、多轮记忆、知识库问答（RAG）、联网搜索（MCP）**的 AI 编程助手。
+一个支持**流式对话、多轮记忆、知识库问答（RAG）、联网搜索（MCP）**的 AI 健康助手。
 前后端分离：Spring Boot 3 + LangChain4j 后端，Vue 3 前端。
 
 ## 功能特性
@@ -13,7 +13,6 @@
 - **登录 / 注册**：JWT 无状态鉴权，拦截器统一校验，ThreadLocal 透传用户身份
 - **调研报告生成**：输入主题一键生成结构化报告，带工具调用次数与超时限制
 - **Token 用量统计**：记录每次模型调用的 token 消耗
-- **前端**：Markdown 渲染（marked）+ XSS 过滤（DOMPurify），登录态本地持久化
 
 ## 技术栈
 
