@@ -1,4 +1,4 @@
-# AI Helper
+# AI Health Helper
 
 一个支持**流式对话、多轮记忆、知识库问答（RAG）、联网搜索（MCP）**的 AI 健康助手。
 前后端分离：Spring Boot 3 + LangChain4j 后端，Vue 3 前端。
